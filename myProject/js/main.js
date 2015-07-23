@@ -1,9 +1,8 @@
-// JavaScript Document
-
 window.onload = function(){
 	
-	var cElem = document.getElementById("canvas");
-	
-		var ctx = cElem.getContext("2d");
+	//plugin for presentaiotn
+	wheelzoom(document.querySelector('img.zoom'));
+
 	
 }
+

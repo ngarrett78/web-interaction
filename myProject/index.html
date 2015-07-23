@@ -1,12 +1,184 @@
 <!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Presentation</title>    
- 
-</head>
+<html lang="en">
 
-<body>
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../myProject/css/reveal.min.css">
+		<link rel="stylesheet" href="../myProject/css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../myProject/lib/css/styles/dark.css">     
+       
+        
+     
+        
+         <!-- jquery plugin being used for presentation -->
+        <script src="../myProject/js/wheelzoom.js"></script>
+        <script src="../myProject/js/main.js"></script>
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+                <br /> <br>
+					<h2>Wheelzoom</h2>
+                    <h3> by: Jack Moore</h3>
+                    <h3> Presented by: Nate Garrett</h3>
+					<h4>Web Interaction & Animation</h4>
+                    <h4>Instructor: Eric Silvay</h4>                   
+                                   
+					
+				</section>
+				
+                <section>
+                	
+                    	<h2> The Example</h2>
+                        <p>Wheelzoom is a simple jquery plugin that makes it possible to zoom in on any image with either the mouse wheel or a touchpad</p>
+                        <br>
+                        <p>Click on image to start zooming!</p>
+                         <img class='zoom' src='images/heartbreak.jpg' alt='bricks' width='555' height='320'/>
+                    
+                </section>
+                
+                <section>
+                	<section>
+                    	<h2>The Code</h2>
+                        <h4>HTML</h4>
+                                              <pre><code>
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;title&gt;Wheelzoom&lt;/title&gt;
+    &lt;script src=&quot;../myProject/js/wheelzoom.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;img class='zoom' src='heartbreak.jpg' alt='heartbreak' width='555' height='320'/&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                      
+                        
+                        </code>
+                        </pre> 
+                        
+                             <a href ="#/2/1">View JavaScript Code below</a>         
+                    
+                    </section>
+                    
+                    <section>
+                    
+                    <h2>The Javascript Code</h2>
+                    
+                                                          <pre><code>
+// JavaScript Document
+
+window.onload = function(){
 	
-</body>
+	wheelzoom(document.querySelector('img.zoom')); 
+}                    
+                        
+                        </code>
+                        </pre> 
+                    <a href ="#/3">Why use this plugin?</a>
+                    
+                    </section>
+                 </section>
+                    <section>
+                    	<h2>The Why</h2>
+                        
+                        <p>This is a very simple plugin that can be used for such things as:
+                          <ol>
+                        	<li class="fragment"> photography websites</li>
+                            <li class="fragment"> eCommerce websites to view products</li>
+                        	<li class="fragment"> health websites to zoom in on nutrition labels</li>
+                            <li class="fragment"> Any other websites containing images that you don't want lightbox to take up the entire screen</li>
+                        </ol>
+                    
+                    </section>             
+              
+                
+                <section>
+                	<h2>The How</h2>
+                    <p>Wheelzoom doesn't actually change the DOM. It replaces the img's background-image with it's own src then sets the src to a transparent image. </p>
+                    <br>
+                    <p>By replacing the image and setting your original image as the background image, it can use background sizing and positioning to zoom and move.</p>
+                   
+                     
+                
+                </section>
+                <section>
+                	<h2>The End</h2>
+                    <h4>Thank you for watching my presentation on Wheelzoom</h4>
+                    <p>References and sources</p>
+                    <hr>
+                    <ul>
+                    	<li>Jack Moore, Wheelzoom - http://www.jacklmoore.com/wheelzoom/</li>
+                        <br>
+                        <li>Images purchased through http://bigstockphoto.com</li>
+                    
+                
+                </section>
+               
+                	
+
+			</div>
+
+		</div>
+
+		<script src="../myProject/lib/js/head.min.js"></script>
+		<script src="../myProject/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme || 'solarized', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'cube', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
 </html>
