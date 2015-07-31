@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Wicked Tattoo App</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Primary CSS -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/normalize.css">
+
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="includes/source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="includes/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+<!-- Google Charts -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<!-- Modernizer -->
+<script src="js/modernizr.js"></script>
+
+<!-- Google Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Merienda' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="topNav">
+    	<div class="container id="head"">
+        	<div class="navbar-header">
+            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                	<span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                                   
+                
+                </button>
+                
+                <a href="#top" class="navbar-brand">Wicked Tatts</a>            
+            
+            
+            </div> <!-- End Navbar -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+            	<ul class="nav navbar-nav">
+                	<li><a href="#music">Audio</a></li>
+                	<li><a href="#charts">Top Artists</a></li>
+                    <li><a href="#maps">Artist Location</a></li>
+                    <li><a href="#gallery">Top Monthly Tatts</a></li>             
+                                   
+                
+                </ul>            
+            </div><!-- End navbar collapse -->        
+        </div><!-- End Container -->    
+    </nav><!--  End Navigation -->
+    
+    <!-- Jumbotron -->
+    <a id="top"></a>
+    <div class="jumbotron">
+    <a id="music"></a>   
+    	<div class="container text-center" id="intro">
+        	<h1>Wicked Tatts</h1>
+            
+            <h3>Updating you on the top artists in the tattoo industry  </h3>                     
+           		<div id="hidden">
+                <h4 style="color:#fff;">Give the page a heartbeat!</h4>             
+                
+                <audio id="audio" controls loop>
+                	<source src="audio/dub-tat.mp3" type="audio/mpeg" />
+                    <source src="audio/dub-tat.ogg" type="audio/ogg" />
+                    Audio is not supported         
+                
+                </audio>
+                 <br>
+                 <br>
+                	<button class="btn btn-warning" onClick="clicked()">rewind 5 seconds</button></p>
+                </div><!-- closing hidden jquery -->
+                
+                	<button id="hide" class="btn btn-default">Hide</button>
+					<button id="show" class="btn btn-default">Show</button>           
+                   
+        </div><!-- End Container -->    
+    </div><!-- End jumbotron -->
+    
+ <!-- begin Chart requirement -->
+    <div class="container">
+    	<a id="charts"></a>
+        <h1>Collected Data</h1>
+        	<div class="col-md-8">
+    		<div id="artist_popular" style="width: 100%; height: 175px;"></div> 
+            </div>
+            
+            <div class="col-md-4">
+            	<h4>Use the chart to view the current, most popular tattoo artists in the Country!</h4>
+                <p>This chart shows the top 4 tattoo artist in the country. The data represents the amount of votes for each indivudual artists over the last 30 days. </p>
+            
+            </div>     
+    
+    </div> <!-- End charts -->   
+    
+<!-- begin interactive map  -->
+	<div class="row" id="map_area">
+    <a id="maps"></a>
+    	<div class="container">
+        	<h1>Get Local</h1>
+        	 <div class="col-md-4">
+                <h4>Use the map to find location and info of top artists</h4>
+                
+                    <!-- region details -->
+                <div class="detail_container">
+                    <!-- region -->
+                    <div class="region_detail">
+                        <h3>Choose a region</h3>
+                        <p>Click on the dots in the map or use the form to select your region</p>                       
+                    </div>
+                </div> 
+                
+                    <div class="region_detail_container">
+                <!-- region -->
+                <div class="region_detail" id="westcoast">
+                    <img class="img-responsive region_photo" src="images/artist/willie.jpg" alt="willie" />
+                    <div class="region_info">
+                        <h2>Willie Cayote</h2>
+                        <strong>Seattle, WA</strong>
+                        
+                    </div>
+                </div>
+                
+                <!-- region -->
+                <div class="region_detail" id="eastcoast">
+                    <img class="img-responsive region_photo" src="images/artist/amanda.jpg" alt="amanda"  />
+                    <div class="region_info">
+                        <h2>Amanda Sorrywork</h2>
+                        <strong>New York</strong>
+                     
+                    </div>
+                </div>
+                
+                <!-- region -->
+                <div class="region_detail" id="south">
+                    <img class="img-responsive region_photo" src="images/artist/johnny.jpg" alt="johnny" />
+                    <div class="region_info">
+                        <h2>Johnny Rockets</h2>
+                        <strong>Texasa</strong>    
+                    </div>
+                </div>
+                
+                <!-- region -->
+                <div class="region_detail" id="midwest">
+                    <img class="img-responsive region_photo" src="images/artist/steve.jpg" alt="steve" />
+                    <div class="region_info">
+                        <h2>Stevie Knows</h2>
+                        <strong>California</strong>           
+                    </div>
+                </div> 
+               </div>
+            
+            </div><!-- close 4 columns -->
+            
+            <div class="col-md-8 map_container"> 
+            
+            	<!-- Dots -->
+                <a class="dot" style="top:120px;  left:100px;" continent="WC" region="westcoast"></a>
+                <a class="dot" style="top:80px;  left:350px;"  continent="MW" region="midwest"></a>
+                <a class="dot" style="top:120px; left:600px;" continent="EC" region="eastcoast" ></a>
+                <a class="dot" style="top:250px;  left:350px;" continent="SO" region="south"></a>
+            
+                        <!-- Form -->
+                <form id="mapForm" name="mapForm" class="form_continent" method="post" action="">
+                    <select name="continent" id="continent">
+                        <option value="WC">West Coast</option>
+                        <option value="MW">Midwest</option>
+                        <option value="EC">East Coast</option>
+                        <option value="SO">South</option>					
+                        <option value="ALL" selected="selected">Show all regions</option>
+                    </select>
+                </form>         
+            
+           </div>          
+           
+        </div><!-- End container -->
+    </div><!-- End interactive map row -->
+    
+    <div class="container" id="gallery_footer">
+    <a id="gallery"></a>
+    	<div class="gallery_container">
+        
+       	 <h3>Top submitted tattoos this month</h3>
+            <p>
+                <a class="fancybox" href="images/gallery/tat2.jpg" data-fancybox-group="gallery" title="Fallen Angel"><img src="images/gallery/tat2s.jpg" alt="" /></a>
+        
+                <a class="fancybox" href="images/gallery/tat3.jpg" data-fancybox-group="gallery" title="Sexy Dragon"><img src="images/gallery/tat3s.jpg" alt="" /></a>
+        
+                <a class="fancybox" href="images/gallery/tat4.jpg" data-fancybox-group="gallery" title="Red as a Rose"><img src="images/gallery/tat4s.jpg" alt="" /></a>
+        
+                <a class="fancybox" href="images/gallery/tat5.jpg" data-fancybox-group="gallery" title="Always Remember"><img src="images/gallery/tat5s.jpg" alt="" /></a>
+                                
+                <a class="fancybox" href="images/gallery/tat7.jpg" data-fancybox-group="gallery" title="Love to hate you"><img src="images/gallery/tat7s.jpg" alt="" /></a>
+            </p>
+            
+		</div><!-- End gallery_container -->
+       </div><!-- end container -->    
+
+<!-- scripts -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/main.js"></script>
+
+<!-- audio js -->
+<script src="js/audioControl.js"></script>
+
+<!-- maps and charts -->
+<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/googleChart.js"></script>
+
+</body>
+</html>
